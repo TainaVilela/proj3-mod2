@@ -1,0 +1,7 @@
+Feat: Utilizado quando feita qualquer adição ao código.O foco dele é ser usado quando houver uma nova implementação
+de funcionalidade no sistema.
+Fix: Utilizado quando existem erros no código que estão causando bugs.
+Refactor: Utilizado na refatoração de código mas que não altere sua funcionalidade.
+Style: Utilizado quando feita uma alteração no estilo e formatação do código.
+Chore: Utilizado na atualização para mudanças em ferramentas, configurações e bibliotecas. Atualizações que não
+ocasionam

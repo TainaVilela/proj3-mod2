@@ -1,6 +1,17 @@
-const express = require('express');
-const cadastroControler = require('../controllers/cadastro');
+var express = require("express");
+var router = express.Router();
+const app = express();
 
-const router = express.Router();
+const path = require("path");
+app.use(express.static(path.join(__dirname)));
 
-router.post('/cadastro', cadastroControler.createCadastro)
+// lógica de validação
+// router.use(function () {
+//   console.log("Passar a lógica aqui");
+// });
+
+router.get("/", function (req, res) {
+  res.render("cadastro");
+});
+
+module.exports = router;

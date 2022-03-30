@@ -1,20 +1,22 @@
 const express = require("express");
+const consign = require('consign');
 const path = require("path");
-const app = express();
-var cadastroCtrl = require("./routes/cadastroRoute");
 
-app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname)));
-app.use(express.urlencoded({ extended: true }));
+const cadastroRoute = require("./routes/cadastroRoute");
 
-const port = process.env.PORT || 3000;
+module.exports = () => {
 
-app.get("/", (req, res) => {
-  res.render("index");
-});
+  const app = express();
 
-app.use("/cadastro", cadastroCtrl);
+  app.use(express.json());
 
-app.listen(port, () =>
-  console.log(`Servidor rodando em http://localhost:${port}`)
-);
+  app.set("view engine", "ejs");
+
+  app.use('/cadastro', cadastroRoute)
+
+  consign()
+      .include('controllers')
+      .into(app)
+
+  return app;
+};

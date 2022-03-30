@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-var cadastroCtrl = require("./controllers/cadastro");
+var cadastroCtrl = require("./routes/cadastroRoute");
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname)));

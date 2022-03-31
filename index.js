@@ -3,7 +3,7 @@ const path = require("path");
 require('dotenv').config();
 const bodyParser = require('body-parser');
 
-//const Filme = require('./models')
+//const Filme = require('./model')
 
 module.exports = () => {
 

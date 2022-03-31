@@ -1,25 +1,23 @@
 const express = require("express");
 const path = require("path");
-require('dotenv').config();
-const bodyParser = require('body-parser');
-
-//const Filme = require('./models')
+require("dotenv").config();
+const Filme = require("./model/filmes");
+const bodyParser = require("body-parser");
 
 module.exports = () => {
-
   const app = express();
 
   app.use(express.json());
 
   app.use(express.static(path.join(__dirname, "public")));
 
-  app.use(bodyParser.json())
-  app.use(bodyParser.urlencoded({ extended: true }))
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
 
   app.get("/", async (req, res) => {
     const filmes = await Filme.findAll();
     console.log(filmes);
-    console.log(typeof(filmes));
+    console.log(typeof filmes);
     res.render("index", {
       filmes,
     });
@@ -34,7 +32,7 @@ module.exports = () => {
   });
 
   app.get("/criar", (req, res) => {
-    res.render("criar",{mensagem: ""});
+    res.render("criar", { mensagem: "" });
   });
 
   app.post("/criar", async (req, res) => {
@@ -61,7 +59,7 @@ module.exports = () => {
 
       res.render("criar", {
         filme,
-        mensagem: ""
+        mensagem: "",
       });
     } catch (err) {
       console.log(err);
@@ -82,7 +80,8 @@ module.exports = () => {
     }
 
     res.render("editar", {
-      filme, mensagem: ""
+      filme,
+      mensagem: "",
     });
   });
 
@@ -113,7 +112,8 @@ module.exports = () => {
     }
 
     res.render("deletar", {
-      filme,mensagem: ""
+      filme,
+      mensagem: "",
     });
   });
 

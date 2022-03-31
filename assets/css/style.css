@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: roboto, arial;
+}
+
+header{
+  background-color: rgb(14, 63, 169);
+  padding: 1%;
+}
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#logo {
+  width: 80%;
+  margin-left: 15%;
+}
+
+.nav{
+  list-style: none;
+  text-decoration: none;
+  font-size: 120%;
+  font-weight: 600;
+  color: rgb(255, 169, 3);
+}
+
+#home{
+  margin-top: 5%;
+  margin-right: 3%;
+  margin-left: 33%;
+}
+
+#shop{
+  margin-top: 5%;
+  margin-right: 3%;
+}
+
+#cadastro{
+  margin-top: 5%;
+  margin-right: 3%;
+}
+
+#login{
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
+
+@media(max-width: 900px){
+    #logo{
+        width: 20rem;
+        margin-left: 5%;
+    }
+    
+    #home{
+      margin-left: 8%;
+    }
+}
+
+@media(max-width: 700px){
+  #logo{
+      width: 10rem;
+      margin-left: 5%;
+  }
+}
+
+@media(max-width: 700px){
+  .nav{
+    font-size: 60%;
+  }
+  #home{
+    margin-left: 6%;
+    margin-right: .5%;
+  }
+  #shop{
+    margin-right: .5%;
+  }
+  
+  #cadastro{
+    margin-right: .5%;
+  }
+  
+  #login{
+    margin-right: 1%;
+  }
+}

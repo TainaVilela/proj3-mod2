@@ -1,28 +1,27 @@
 const express = require("express");
 const path = require("path");
 
-
 require("dotenv").config();
 const Filme = require("./model/filmes");
 const bodyParser = require("body-parser");
 
-
 module.exports = () => {
   const app = express();
+  app.set("view engine", "ejs");
 
   app.use(express.json());
 
-  app.use(express.static(path.join(__dirname, "public")));
+  app.use(express.static(path.join(__dirname)));
 
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
   app.get("/", async (req, res) => {
-    const filmes = await Filme.findAll();
-    console.log(filmes);
-    console.log(typeof filmes);
+    // const filmes = await Filme.findAll();
+    // console.log(filmes);
+    // console.log(typeof filmes);
     res.render("index", {
-      filmes,
+      //filmes,
     });
   });
 

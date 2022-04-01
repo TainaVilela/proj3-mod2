@@ -5,6 +5,8 @@ require("dotenv").config();
 const Filme = require("./model/filmes");
 const bodyParser = require("body-parser");
 
+const port = process.env.PORT || 3000;
+
 module.exports = () => {
   const app = express();
   app.set("view engine", "ejs");
@@ -33,7 +35,7 @@ module.exports = () => {
     res.render("cadastro");
   });
 
-  app.get("/login",(req, res)=>{
+  app.get("/login", (req, res) => {
     res.render("login");
   });
 
@@ -68,7 +70,7 @@ module.exports = () => {
       const filme = await Filme.create({
         nome,
         descricao,
-        imagem, 
+        imagem,
       });
 
       res.render("criar", {
@@ -146,3 +148,6 @@ module.exports = () => {
 
   return app;
 };
+app.listen(port, () =>
+  console.log(`Servidor rodando em http://localhost:${port}`)
+);

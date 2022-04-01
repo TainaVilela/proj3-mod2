@@ -2,7 +2,11 @@
 
 O objetivo do projeto é criar um catálogo de filmes da locadora Blockbuster  onde será possível realizar as 4 operações do CRUD. Como linguagem foi usado JavaScript e as tecnologias: Express, HTML, CSS e MVC.
 
-Os requisitos são:
+O catálogo pode ser acessado pelo link:
+
+https://mod2-blockbuster.herokuapp.com/
+
+Os requisitos do projeto são:
 - Persistir os dados através do PostgreSQL com o Sequelize.
 - Toda entrada de dados deve ser validada antes.
 - Criar um menu de navegação em todas as telas.

@@ -68,7 +68,7 @@ module.exports = () => {
       const filme = await Filme.create({
         nome,
         descricao,
-        imagem,
+        imagem, 
       });
 
       res.render("criar", {

@@ -33,8 +33,8 @@ module.exports = () => {
     res.render("cadastro");
   });
 
-  app.get('login',(req, res)=>{
-    res.render('login');
+  app.get("/login",(req, res)=>{
+    res.render("login");
   });
 
   app.get("/filmes/:id", async (req, res) => {

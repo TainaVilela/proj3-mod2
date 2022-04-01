@@ -148,6 +148,3 @@ module.exports = () => {
 
   return app;
 };
-app.listen(port, () =>
-  console.log(`Servidor rodando em http://localhost:${port}`)
-);

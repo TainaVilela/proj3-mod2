@@ -1,6 +1,6 @@
 # Módulo 2 - Projeto 3 – Catálogo
 
-O objetivo do projeto é criar um catálogo de filmes da locadora Blockbuster  onde será possível realizar as 4 operações do CRUD. Como linguagem foi usado JavaScript e as tecnologias: Express, HTML, CSS e MVC.
+O objetivo do projeto é criar um catálogo de filmes da locadora Blockbuster onde será possível realizar as 4 operações do CRUD. A linguagem utilizada é JavaScript e as tecnologias usadas são Express, HTML, CSS e MVC.
 
 O catálogo pode ser acessado pelo link:
 

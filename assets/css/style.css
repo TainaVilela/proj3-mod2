@@ -34,11 +34,14 @@ nav {
   margin-left: 33%;
 }
 
+<<<<<<< HEAD
 #detalhes{
   margin-top: 5%;
   margin-right: 3%;
 }
 
+=======
+>>>>>>> 46cb72213b5c7ad008349cb5f3b02d09ccab1b5b
 #cadastro{
   margin-top: 5%;
   margin-right: 3%;
@@ -57,7 +60,7 @@ nav {
 h1{
   text-align: left;
   margin: 3%;
-  font-size: 4rem;
+  font-size: 3rem;
   color: rgb(14, 63, 169);
   text-decoration: underline;
   text-decoration-color: rgb(255, 169, 3);
@@ -112,6 +115,10 @@ section#cadastro form button:hover{
   color: rgb(255, 169, 3);
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46cb72213b5c7ad008349cb5f3b02d09ccab1b5b
 @media(max-width: 900px){
     #logo{
         width: 20rem;

@@ -34,11 +34,6 @@ nav {
   margin-left: 33%;
 }
 
-#shop{
-  margin-top: 5%;
-  margin-right: 3%;
-}
-
 #cadastro{
   margin-top: 5%;
   margin-right: 3%;
@@ -57,11 +52,61 @@ nav {
 h1{
   text-align: left;
   margin: 3%;
-  font-size: 4rem;
+  font-size: 3rem;
   color: rgb(14, 63, 169);
   text-decoration: underline;
   text-decoration-color: rgb(255, 169, 3);
 }
+
+/*------------------------------------CADASTRO-------------------------------------*/
+section#cadastro{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 2%;
+}
+
+section#cadastro form{
+  width: 50%;
+}
+
+section#cadastro form label{
+  color: rgb(14, 63, 169);
+  text-decoration-color: rgb(255, 169, 3);
+  text-decoration-line: underline;
+  font-weight: 500;
+}
+
+section#cadastro form input{
+ width: 100%;
+ padding: 1%;
+ font-size: 1rem;
+ font-weight: 400;
+ margin: .8% 0 3% 0;
+ border: solid rgb(14, 63, 169);
+}
+
+section#cadastro form button{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border: solid rgb(255, 169, 3);
+  width: 7rem;
+  padding: .5rem;
+  color: rgb(14, 63, 169);
+  font-size: 100%;
+  font-weight: 900;
+  margin-top: 1rem;
+}
+
+section#cadastro form button:hover{
+  cursor: pointer;
+  transition: .5s;
+  background-color: rgb(14, 63, 169);
+  border: solid rgb(14, 63, 169);
+  color: rgb(255, 169, 3);
+}
+
 
 @media(max-width: 900px){
     #logo{

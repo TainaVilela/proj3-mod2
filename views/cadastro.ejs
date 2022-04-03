@@ -16,10 +16,27 @@
         </a>
         <a class="nav" id="home" id="home" href="/">HOME</a>
         <a class="nav" id="cadastro" href="/cadastro">CADASTRO</a>
-        <a class="nav" id="shop" href="/signUp">SIGNUP</a>
         <a class="nav" id="login" href="/login">LOGIN</a>
       </nav>
     </header>
-    <h1>Cadastrar Filme</h1>
+    <main>
+      <div>
+        <h1>Cadastrar Filme</h1>
+      </div>
+      <section id="cadastro">
+          <form action="/cadastro" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required />
+
+            <label for="imagem"> Link Imagem:</label>
+            <input type="text" name="imagem" id="imagem" required />
+
+            <label for="descricao">Descrição:</label>
+            <input type="text" name="descricao" id="descricao" required />
+
+            <button type="submit">CADASTRAR</button>
+          </form>
+      </section>
+    </main>
   </body>
 </html>

@@ -3,7 +3,9 @@ const path = require("path");
 
 require("dotenv").config();
 const Filme = require("./model/filmes");
+
 const db = require('./model/database');
+
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 
@@ -21,11 +23,13 @@ const port = process.env.PORT || 3000;
   
 
   app.get("/", async (req, res) => {
+
     //  const filmes = await Filme.findAll();
     //  console.log(filmes);
     //  console.log(typeof filmes);
     res.render("index", {
       //filmes,
+
     });
   });
 
@@ -33,9 +37,17 @@ const port = process.env.PORT || 3000;
     res.render("lista");
   });
 
+<<<<<<< HEAD
   app.get("/detalhes",(req, res)=>{
     res.render("detalhes");
+=======
+
+  app.get("/login",(req, res)=>{
+    res.render("login");
+>>>>>>> 6277adc7e8393fd288ead671452e4320f90fff26
   });
+
+
 
   app.get("/filmes/:id", async (req, res) => {
     const filme = await Filme.findByPk(req.params.id);
@@ -146,6 +158,9 @@ const port = process.env.PORT || 3000;
 
 
 db.conectado();
+<<<<<<< HEAD
 
 app.listen(port, () =>
     console.log(`Servidor rodando em http://localhost:${port}`))
+=======
+>>>>>>> 6277adc7e8393fd288ead671452e4320f90fff26

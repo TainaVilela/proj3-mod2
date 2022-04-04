@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
-const database = require("./database");
+const database = require("../model/database/index");
 
-const Filme = database.define(
+const Filme = database.sequelize.define(
   "filmes",
   {
     id: {

@@ -3,7 +3,7 @@ const path = require("path");
 
 require("dotenv").config();
 const Filme = require("./model/filmes");
-const db = require("./model/database/index")
+const db = require("./model/database/index");
 const bodyParser = require("body-parser");
 
 const port = process.env.PORT || 3000;
@@ -20,11 +20,11 @@ module.exports = () => {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   app.get("/", async (req, res) => {
-     const filmes = await Filme.findAll();
-     console.log(filmes);
-     console.log(typeof filmes);
+    const filmes = await Filme.findAll();
+    console.log(filmes);
+    console.log(typeof filmes);
     res.render("index", {
-     filmes,
+      filmes,
     });
   });
 
@@ -32,14 +32,13 @@ module.exports = () => {
     res.render("cadastro");
   });
 
-
-  app.get("/detalhes",(req, res)=>{
+  app.get("/detalhes", (req, res) => {
     res.render("detalhes");
   });
 
-  app.get("/lista",(req, res)=>{
+  app.get("/lista", (req, res) => {
     res.render("lista");
-
+  });
 
   app.get("/filmes/:id", async (req, res) => {
     const filme = await Filme.findByPk(req.params.id);

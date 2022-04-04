@@ -9,12 +9,13 @@
   
   <%- include('./nav') %>
   
-  <div>
+    <div>
         <% if(message != "") { %>
           <%- include('./alerts.ejs') %>
       <% } %>
         <h1>Cadastrar Filme</h1>
-      </div>
+    </div>
+
       <section id="cadastro">
           <form action="/create" method="post">
             <label for="nome">Nome:</label>
@@ -30,8 +31,9 @@
           </form>
       </section>
 
-    <%- include('./footer') %>
-    <script src="/script.js"></script>
+      <%- include('./footer') %>
+    
+    <script src="../js/script.js"></script>
 
   </body>
 </html>

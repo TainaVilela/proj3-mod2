@@ -1,6 +1,5 @@
 const res = require("express/lib/response");
 const Filme = require("../model/filmes");
-const Op = require("sequelize").Op;
 
 const orderById =  {order: [["id", "ASC"]] };
 let message = "";
@@ -45,10 +44,10 @@ const getAll = async (req, res) => {
         !filme.imagem
       ) {
         message = "Preencha todos os campos para cadastrar!";
-        return res.redirect("/create");
+        return res.redirect("/signup");
       }
   
-      await filme.create(filme);
+      await Filme.create(filme);
       message = "Filme criado com sucesso!";
       type = "success";
       res.redirect("/");
@@ -75,8 +74,8 @@ const getAll = async (req, res) => {
       } else {
         res.render("index", {
             filmes,
-            filmePut: filme,
-            filmeDel: null,
+            filmePut: null,
+            filmeDel: filme,
             message,
             type,
             filmeSearch: []
@@ -90,7 +89,7 @@ const getAll = async (req, res) => {
   const update = async (req, res) => {
     try {
       const filme = req.body;
-      await filme.update(filme, { where: { id: req.params.id } });
+      await Filme.update(filme, { where: { id: req.params.id } });
       message = "Filme atualizado com sucesso!";
       type = "success";
       res.redirect("/");
@@ -110,35 +109,6 @@ const getAll = async (req, res) => {
     }
   };
   
-  const searchByName = async (req, res) => {
-    try {
-      const Filme = await Filme.findAll({
-        where: {
-          nome: {
-            [Op.like]: `%${req.body.filme}%`,
-          },
-        },
-        order: [["id", "ASC"]]
-      });
-  
-      if(filme.length == 0 ){
-        message = "Não encontramos esse filme"
-        type = "warning"
-        return res.redirect("/");
-      }
-  
-      res.render("index", {
-        filmes: [],
-        filmePut: null,
-        filmeDel: null,
-        message,
-        type,
-        filmeSearch: filme
-      });
-    } catch (err) {
-      res.status(500).send({ err: err.message });
-    }
-  };
   
   module.exports = {
     getAll,
@@ -146,6 +116,5 @@ const getAll = async (req, res) => {
     getById,
     update,
     remove,
-    searchByName,
     signup
   };

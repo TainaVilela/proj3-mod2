@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="shortcut icon" href="assets/img/icone.png" />
-    <title>BlockBuster</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="">
-          <img id="logo" src="assets/img/logo.png" alt="/" />
-        </a>
-        <a class="nav" id="home" id="home" href="/">HOME</a>
-        <a class="nav" id="cadastro" href="/cadastro">CADASTRO</a>
-        <a class="nav" id="detalhes" href="/detalhes">DETALHES</a>
-        <a class="nav" id="lista" href="/lista">LISTA</a>
-      </nav>
-    </header>
-    <main>
-    <img id="capa" src="assets/img/capa.jpg" alt="/">
-    <h1>Home</h1>
-    </main>
-  </body>
+
+<head>
+    <%- include('./head') %>
+</head>
+
+<body>
+
+    <%- include('./nav') %>
+
+    <% if (filmeSearch.length == 0) {%>
+        <header>
+            <img id="capa" src="../assets/img/capa.jpg" alt="banner">
+            <% if(message !="" ) { %>
+                <%- include('./alerts') %>
+                    <% } %>
+        </header>
+    <% } %>
+
+        <main>
+        
+        <% if (filmeSearch.length == 0) {%>
+            <section id='cards'>
+                <% filmes.forEach((filme)=> { %>
+                    <%- include('./cards', {filme: filme})%>
+                <% }) %>
+            </section>
+        <% } else { %>
+            <div id="result-search-space">
+                <h2>Resultado da Pesquisa</h2>
+                <a href="/">Todos os Filmes</a>
+            </div>
+            <section id='cards'>
+                <% filmeSearch.forEach((filme)=> { %>
+                    <%- include('./cards' , {filme: filme})%>
+                <% }) %>
+            </section>
+        <% } %>
+
+        </main>
+
+        <% if (filmePut !=null) {%>
+            <%- include('./modalPut') %>
+                <% } %>
+
+                    <% if (filmeDel !=null) {%>
+                        <%- include('./modalDel') %>
+                            <% } %>
+
+                                <%- include('./footer') %>
+
+                                    <script src="/script.js"></script>
+
+</body>
+
 </html>

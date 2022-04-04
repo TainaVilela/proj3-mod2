@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <%-include('./head.ejs')%>
+</head>
+
+<body>
+  
+  <%- include('./nav') %>
+  
+  <div>
+        <% if(message != "") { %>
+          <%- include('./alerts.ejs') %>
+      <% } %>
+        <h1>Cadastrar Filme</h1>
+      </div>
+      <section id="cadastro">
+          <form action="/create" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required />
+
+            <label for="imagem"> Link Imagem:</label>
+            <input type="text" name="imagem" id="imagem" required />
+
+            <label for="descricao">Descrição:</label>
+            <input type="text" name="descricao" id="descricao" required />
+
+            <button type="submit">CADASTRAR</button>
+          </form>
+      </section>
+
+    <%- include('./footer') %>
+    <script src="/script.js"></script>
+
+  </body>
+</html>

@@ -6,6 +6,8 @@ const Filme = require("./model/filmes");
 const db = require("./model/database/index")
 const bodyParser = require("body-parser");
 
+const port = process.env.PORT || 3000;
+
 module.exports = () => {
   const app = express();
   app.set("view engine", "ejs");
@@ -30,13 +32,14 @@ module.exports = () => {
     res.render("cadastro");
   });
 
+
   app.get("/detalhes",(req, res)=>{
     res.render("detalhes");
   });
 
   app.get("/lista",(req, res)=>{
     res.render("lista");
-  });
+
 
   app.get("/filmes/:id", async (req, res) => {
     const filme = await Filme.findByPk(req.params.id);
@@ -69,7 +72,7 @@ module.exports = () => {
       const filme = await Filme.create({
         nome,
         descricao,
-        imagem, 
+        imagem,
       });
 
       res.render("criar", {

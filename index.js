@@ -3,7 +3,9 @@ const path = require("path");
 
 require("dotenv").config();
 const Filme = require("./model/filmes");
+
 const db = require('./model/database');
+
 const bodyParser = require("body-parser");
 
 module.exports = () => {
@@ -18,11 +20,13 @@ module.exports = () => {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   app.get("/", async (req, res) => {
+
     //  const filmes = await Filme.findAll();
     //  console.log(filmes);
     //  console.log(typeof filmes);
     res.render("index", {
       //filmes,
+
     });
   });
 
@@ -34,9 +38,12 @@ module.exports = () => {
     res.render("cadastro");
   });
 
+
   app.get("/login",(req, res)=>{
     res.render("login");
   });
+
+
 
   app.get("/filmes/:id", async (req, res) => {
     const filme = await Filme.findByPk(req.params.id);

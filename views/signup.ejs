@@ -8,7 +8,7 @@
     <%- include('./nav') %>
     <h1>Cadastrar Filme</h1>
 
-    <div><% if(message != "") { %> <%- include('./alerts.ejs') %> <% } %></div>
+    <div><% if(message != "") { %> <%- include('alerts.ejs') %> <% } %></div>
 
     <section id="cadastro">
       <form action="/create" method="post">

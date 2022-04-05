@@ -1,18 +1,13 @@
 <div class="card">
-    <div class="dropdown">
-        <div class="dropdown-button">
-            <i class="bi bi-three-dots-vertical"></i>
-        </div>
-        <div class="dropdown-content">
-            <a id="editar" href="/getById/<%= filme.id %>/put">Editar</a>
-            <a id="apagar" href="/getById/<%= filme.id %>/delete">Apagar</a>
-        </div>
-    </div>
-    <img src="<%= filme.imagem %>" alt="">
-    <h3>
-        <%= filme.nome %>
-    </h3>
-    <p class="descricao">
-        <%= filme.descricao %>
-  
+  <img id="img" src="<%= filme.imagem %>" alt="" />
+  <div id="descricao">
+    <h3><%= filme.nome %></h3>
+    <p><%= filme.descricao %></p>
+  </div>
+  <div id="editar">
+    <a href="/getById/<%= filme.id %>/put">Editar</a>
+  </div>
+  <div id="apagar">
+    <a href="/getById/<%= filme.id %>/delete">Apagar</a>
+  </div>
 </div>

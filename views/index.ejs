@@ -1,57 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
+  <head>
     <%- include('./head') %>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <%- include('./nav') %>
+    <img id="capa" src="/assets/img/capa.jpg" alt="banner" />
 
-    <% if (filmeSearch.length == 0) {%>
-        <header>
-            <img id="capa" src="../assets/img/capa.jpg" alt="banner">
-            <% if(message !="" ) { %>
-                <%- include('./alerts') %>
-                    <% } %>
-        </header>
-    <% } %>
+    <% if (filmeSearch.length == 0) {%> <% if(message !="" ) { %> <%-
+    include('./alerts') %> <% } %> <% } %>
 
-        <main>
-        
-        <% if (filmeSearch.length == 0) {%>
-            <section id='cards'>
-                <% filmes.forEach((filme)=> { %>
-                    <%- include('./cards', {filme: filme})%>
-                <% }) %>
-            </section>
-        <% } else { %>
-            <div id="result-search-space">
-                <h2>Resultado da Pesquisa</h2>
-                <a href="/">Todos os Filmes</a>
-            </div>
-            <section id='cards'>
-                <% filmeSearch.forEach((filme)=> { %>
-                    <%- include('./cards' , {filme: filme})%>
-                <% }) %>
-            </section>
-        <% } %>
+    <h1>HOME</h1>
 
-        </main>
+    <main>
+      <% if (filmeSearch.length == 0) {%> <% filmes.forEach((filme)=> { %> <%-
+      include('./cards', {filme: filme})%> <% }) %> 
+      <% } else { %>
+      <div id="result-search-space">
+        <h2>Resultado da Pesquisa</h2>
+        <a href="/">Todos os Filmes</a>
+      </div>
 
-        <% if (filmePut !=null) {%>
-            <%- include('./modalput.ejs') %>
-                <% } %>
+      <% filmeSearch.forEach((filme)=> { %> <%- include('./cards' , {filme:
+      filme})%> <% }) %> <% } %>
+    </main>
 
-                    <% if (filmeDel !=null) {%>
-                        <%- include('./modalDel.ejs') %>
-                            <% } %>
+    <% if (filmePut !=null) {%> <%- include('./modalput.ejs') %> <% } %> 
+    <% if(filmeDel !=null) {%> <%- include('./modalDel.ejs') %> <% } %> 
+    
+    <%-include('./footer') %>
 
-                                <%- include('./footer') %>
-
-                                    <script src="../js/script.js"></script>
-
-</body>
-
+    <script src="../js/script.js"></script>
+  </body>
 </html>

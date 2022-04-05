@@ -1,27 +1,27 @@
-<section class="modal-overlay" id="ovarlay">
-  <div class="modal" id="modal">
+<div id="editar">
+  <h3>Atualizar Filme</h3>
+  <section id="cadastro">
+    <form action="/update/<%= filmePut.id %>" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" value="<%= filmePut.nome %>" />
 
-      <div class="modal-header">
-          <h3>Atualizar Filme</h3>
-          <a href="/" id="close-modal-put"><i class="bi bi-x"></i></a>
-      </div>
+      <label for="descricao">Descrição:</label>
+      <input
+        type="text"
+        id="descricao"
+        name="descricao"
+        value="<%= filmePut.descricao %>"
+      />
 
-      <div class="modal-body">
-          <form class="form-modal" action="/update/<%= filmePut.id %>" method="POST">
+      <label for="imagem">Link da Imagem</label>
+      <input
+        type="text"
+        id="imagem"
+        name="imagem"
+        value="<%= filmePut.imagem %>"
+      />
 
-              <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" value="<%= filmePut.nome %>">
-
-              <label for="descricao">Descrição:</label>
-              <input type="text" id="descricao" name="descricao" value="<%= filmePut.descricao %>">
-
-              <label for="imagem">Link da Imagem</label>
-              <input type="text" id="imagem" name="imagem" value="<%= filmePut.imagem %>">
-
-              <button id="btnCadastrar" type="submit">Atualizar</button>
-
-          </form>
-      </div>
-
-  </div>        
-</section>
+      <button id="btnCadastrar" type="submit">ATUALIZAR</button>
+    </form>
+  </section>
+</div>

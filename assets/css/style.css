@@ -8,8 +8,9 @@
 
 header{
   background-color: rgb(14, 63, 169);
-  padding: 1%;
+  
 }
+
 nav {
   display: flex;
   justify-content: space-evenly;
@@ -34,20 +35,14 @@ nav {
   margin-left: 33%;
 }
 
-
-#detalhes{
+#create{
   margin-top: 5%;
   margin-right: 3%;
 }
 
-#cadastro{
-  margin-top: 5%;
-  margin-right: 3%;
-}
-
-#lista{
-  margin-top: 5%;
-  margin-right: 5%;
+.nav:hover{
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 169, 3);
 }
 
 #capa{
@@ -57,29 +52,183 @@ nav {
 
 h1{
   text-align: left;
-  margin: 3%;
-  font-size: 3rem;
+  margin: 5vh 0 2vh 4vh;
+  font-size: 5vh;
   color: rgb(14, 63, 169);
   text-decoration: underline;
   text-decoration-color: rgb(255, 169, 3);
 }
 
-/*------------------------------------CADASTRO-------------------------------------*/
+/*----------------------------------cards---------------------*/
+main{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.card{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 4vh;
+  box-shadow: 5px 5px 5px 5px #00000079;
+  width: 50vh;
+  padding: 4vh;
+}
+
+#img{
+  width: 70%;
+  margin: 2vh;
+}
+
+#descricao h3{
+  font-size: 3vh;
+  font-weight: 800;
+  text-align: center;
+}
+
+#descricao p{
+  margin: 2vh;
+  text-align: center;
+  font-size: 1.8vh;
+}
+
+#descricao{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+}
+
+#editar{
+  margin-top: 5%;
+}
+
+#editar a{
+  text-decoration: none;
+  background-color: white;
+  border: solid rgb(255, 169, 3);
+  padding: 0 2vh 0 2vh;
+  color: rgb(14, 63, 169);
+  font-size: 3vh;
+  font-weight: 900;
+}
+
+#editar a:hover{
+  transition: .6s;
+  background-color: rgb(14, 63, 169);
+  border: solid rgb(14, 63, 169);
+  color: rgb(255, 169, 3);
+}
+
+#apagar{
+  margin-top: 5%;
+}
+
+#apagar a{
+  text-decoration: none;
+  background-color: white;
+  border: solid rgb(255, 169, 3);
+  padding: 0 2vh 0 2vh;;
+  color: rgb(14, 63, 169);
+  font-size: 3vh;
+  font-weight: 900;
+}
+
+#apagar a:hover{
+  transition: .6s;
+  background-color: rgb(14, 63, 169);
+  border: solid rgb(14, 63, 169);
+  color: rgb(255, 169, 3);
+}
+
+/*----------------------------deletar---------------------*/
+#deletar h3{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 5vh;
+  font-size: 7vh;
+  color: rgb(14, 63, 169);
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 169, 3);
+}
+
+#deletar p{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 4vh;
+  color: rgb(14, 63, 169);
+}
+
+#yesOrNot{
+  display: flex;
+  justify-content: center;
+}
+
+#no{
+  text-decoration: none;
+  margin: 6vh 8vh 0 8vh;
+  font-size: 4vh;
+  color: rgb(14, 63, 169);
+  background-color: white;
+  border: solid rgb(255, 169, 3);
+  padding: 0 2vh 0 2vh;;
+  font-weight: 600;
+}
+
+#yes{
+  text-decoration: none;
+  margin: 6vh 8vh 0 8vh;
+  font-size: 4vh;
+  color: rgb(14, 63, 169);
+  background-color: white;
+  border: solid rgb(255, 169, 3);
+  padding: 0 2vh 0 2vh;;
+  font-weight: 600;
+}
+
+#yes:hover{
+  transition: .6s;
+  background-color: rgb(14, 63, 169);
+  border: solid rgb(14, 63, 169);
+  color: rgb(255, 169, 3);
+}
+
+#no:hover{
+    transition: .6s;
+    background-color: rgb(14, 63, 169);
+    border: solid rgb(14, 63, 169);
+    color: rgb(255, 169, 3);
+}
+
+/*----------------------------Editar---------------------*/
+#editar h3{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 5vh;
+  font-size: 7vh;
+  color: rgb(14, 63, 169);
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 169, 3);
+}
+
+/*--------------------------------CADASTRO---------------------------------*/
 section#cadastro{
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  padding: 2%;
+  padding: 2vh;
 }
 
 section#cadastro form{
+  margin-top: 5vh;
   width: 50%;
 }
 
 section#cadastro form label{
   color: rgb(14, 63, 169);
-  text-decoration-color: rgb(255, 169, 3);
-  text-decoration-line: underline;
   font-weight: 500;
 }
 
@@ -113,41 +262,54 @@ section#cadastro form button:hover{
   color: rgb(255, 169, 3);
 }
 
-@media(max-width: 900px){
-    #logo{
-        width: 20rem;
-        margin-left: 5%;
-    }
-    
-    #home{
-      margin-left: 8%;
-    }
+
+/*------------------------Rodapé------------------------*/
+footer p {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20vh;
+  padding-bottom: 5vh;
+  align-items: center;
+  padding-top: 5vh;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  text-align: center;
 }
 
-@media(max-width: 700px){
+/*-----------------------Responsividade--------------------*/
+
+
+@media(max-width: 900px){
   #logo{
-      width: 10rem;
+      width: 20rem;
       margin-left: 5%;
   }
+  
+  #home{
+    margin-left: 8%;
+  }
 }
 
 @media(max-width: 700px){
-  .nav{
-    font-size: 60%;
-  }
-  #home{
-    margin-left: 6%;
-    margin-right: .5%;
-  }
-  #shop{
-    margin-right: .5%;
-  }
-  
-  #cadastro{
-    margin-right: .5%;
-  }
-  
-  #lista{
-    margin-right: 1%;
-  }
+#logo{
+    width: 10rem;
+    margin-left: 5%;
+}
+}
+
+@media(max-width: 700px){
+.nav{
+  font-size: 60%;
+}
+
+#home{
+  margin-left: 6%;
+  margin-right: .5%;
+}
+
+#create{
+  margin-right: .5%;
+}
+
 }

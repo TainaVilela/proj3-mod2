@@ -75,6 +75,11 @@ main{
   padding: 4vh;
 }
 
+.card:hover{
+  transition: 0.5s;
+  transform: scale(1.07);
+}
+
 .card a{
   display: flex;
   justify-content: center;

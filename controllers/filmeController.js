@@ -34,6 +34,14 @@ const getAll = async (req, res) => {
     }
   };
   
+  const detalhes = (req, res) => {
+    try {
+      res.render("detalhes");
+    } catch (err) {
+      res.status(500).send({ err: err.message });
+    }
+  };
+
   const create = async (req, res) => {
     try {
       const filme = req.body;
@@ -55,6 +63,7 @@ const getAll = async (req, res) => {
       res.status(500).send({ err: err.message });
     }
   };
+
   
   const getById = async (req, res) => {
     try {
@@ -116,5 +125,6 @@ const getAll = async (req, res) => {
     getById,
     update,
     remove,
-    signup
+    signup,
+    detalhes
   };

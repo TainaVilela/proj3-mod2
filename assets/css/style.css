@@ -239,7 +239,8 @@ section#cadastro form{
 
 section#cadastro form label{
   color: rgb(14, 63, 169);
-  font-weight: 500;
+  font-size: 2.5vh;
+  font-weight: 600;
 }
 
 section#cadastro form input{

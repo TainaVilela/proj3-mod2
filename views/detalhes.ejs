@@ -6,6 +6,18 @@
   <body>
     <%- include('./nav') %>
 
+    <main>
+      <div class="container">
+          <div class="item">
+              <img src="<%= filme.imagem %>" alt="capa do filme">
+          </div>
+          <div class="item texto">
+              <h2><%= filme.nome %></h2>
+              <p><%= filme.descricao %></p>
+          </div>
+      </div>
+  </main>
+
     <%- include('./footer') %>
   </body>
 </html>

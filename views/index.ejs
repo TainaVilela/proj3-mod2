@@ -12,8 +12,12 @@
     include('./alerts') %> <% } %> <% } %>
 
     <h1>HOME</h1>
+    
+  <% if (filmePut !=null) {%> <%- include('./modalput.ejs') %> <% } %> 
+  <% if(filmeDel !=null) {%> <%- include('./modalDel.ejs') %> <% } %> 
 
     <main>
+
       <% if (filmeSearch.length == 0) {%> <% filmes.forEach((filme)=> { %> <%-
       include('./cards', {filme: filme})%> <% }) %> 
       <% } else { %>
@@ -25,9 +29,6 @@
       <% filmeSearch.forEach((filme)=> { %> <%- include('./cards' , {filme:
       filme})%> <% }) %> <% } %>
     </main>
-
-    <% if (filmePut !=null) {%> <%- include('./modalput.ejs') %> <% } %> 
-    <% if(filmeDel !=null) {%> <%- include('./modalDel.ejs') %> <% } %> 
     
     <%-include('./footer') %>
 

@@ -51,9 +51,9 @@ const getAll = async (req, res) => {
         !filme.nome ||
         !filme.descricao ||
         !filme.imagem ||
-        !filme.autor ||
+        !filme.diretor ||
         !filme.genero ||
-        !filme.anoLancamento
+        !filme.ano
       ) {
         message = "Preencha todos os campos para cadastrar!";
         return res.redirect("/signup");

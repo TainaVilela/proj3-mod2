@@ -277,8 +277,10 @@ section#cadastro form button:hover{
 #message{
   display: flex;
   justify-content: center;
+  text-align: center;
   color: rgb(14, 63, 169);
   font-size: 10vh;
+  font-weight: 700;
   background-color: rgb(255, 169, 3);
   padding: 5vh;
 }

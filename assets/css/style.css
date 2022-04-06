@@ -54,6 +54,7 @@ h1{
   text-align: left;
   margin: 5vh 0 2vh 4vh;
   font-size: 5vh;
+  font-weight: 900;
   color: rgb(14, 63, 169);
   text-decoration: underline;
   text-decoration-color: rgb(255, 169, 3);
@@ -86,7 +87,10 @@ main{
 }
 
 #img{
-  width: 70%;
+  max-width:600px;
+  max-height:450px;
+  width: auto;
+  height: auto;
   margin: 2vh;
 }
 
@@ -150,6 +154,36 @@ main{
   border: solid rgb(14, 63, 169);
   color: rgb(255, 169, 3);
 }
+
+/*--------------------------detalhes-----------------*/
+.detalhes{
+  display: flex;
+  align-items: center;
+  margin: 5% 5% 0 5%;
+  box-shadow: 5px 5px 5px 5px #00000079;
+  padding: 2%;
+}
+
+.detalhes img{
+    max-width:600px;
+    max-height:450px;
+    width: auto;
+    height: auto;
+}
+
+.detalhes h3{
+  text-align: center;
+  font-size: 5vh;
+  font-weight: 900;
+}
+
+.detalhes p{
+  margin: 3%;
+  font-size: 2vh;
+  font-weight: 500;
+  text-align: justify;
+}
+
 
 /*----------------------------deletar---------------------*/
 #deletar h3{
@@ -291,7 +325,7 @@ footer p {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 20vh;
+  margin-top: 10vh;
   padding-bottom: 5vh;
   align-items: center;
   padding-top: 5vh;
@@ -316,15 +350,20 @@ footer p {
 }
 
 @media(max-width: 700px){
-#logo{
+  #logo{
     width: 10rem;
     margin-left: 5%;
 }
-}
 
-@media(max-width: 700px){
 .nav{
   font-size: 60%;
+}
+
+#img{
+  max-width:400px;
+  max-height:250px;
+  width: auto;
+  height: auto;
 }
 
 #home{
@@ -334,6 +373,23 @@ footer p {
 
 #create{
   margin-right: .5%;
+}
+
+.detalhes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.detalhes img{
+  max-width:400px;
+  max-height:250px;
+  width: auto;
+  height: auto;
+}
+
+#message{
+  font-size: 4vh;
 }
 
 }

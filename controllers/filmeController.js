@@ -34,9 +34,10 @@ const getAll = async (req, res) => {
     }
   };
   
-  const detalhes = (req, res) => {
+  const detalhes = async (req, res) => {
     try {
-      res.render("detalhes");
+      const filme = await Filme.findByPk(req.params.id)
+      res.render("detalhes",{filme});
     } catch (err) {
       res.status(500).send({ err: err.message });
     }

@@ -10,15 +10,35 @@ const Filme = database.sequelize.define(
       allowNull: false,
       primaryKey: true,
     },
+    
     nome: {
       type: Sequelize.STRING,
       allowNull: false,
     },
+    
     descricao: Sequelize.STRING,
+    
     imagem: {
       type: Sequelize.STRING,
       allowNull: false,
     },
+    
+    ano: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+
+    diretor: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+
+    genero: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+
+    
   },
   {
     freezeTableName: true,
